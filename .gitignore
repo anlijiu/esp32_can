@@ -42,6 +42,9 @@
 *.idb
 *.pdb
 
+# my cmake build dir
+build
+
 # Kernel Module Compile Results
 *.mod*
 *.cmd
