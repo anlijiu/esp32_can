@@ -28,9 +28,9 @@
 
 #define MAIN_TAG "MAIN"
 
-xQueueHandle can_frame_queue = NULL;
+QueueHandle_t can_frame_queue = NULL;
 SemaphoreHandle_t cdc_mtx;
-xQueueHandle can_irq_quee = NULL;
+QueueHandle_t can_irq_quee = NULL;
 
 void app_main(void)
 {

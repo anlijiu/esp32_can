@@ -172,40 +172,40 @@ void frame_rx_cb(struct CanFrame *f) {
 		if (str != NULL) {
 			switch (f->DLC) {
 				case 0:
-				sprintf(str, "T%08x%d\r", f->CanId, f->DLC);
+				sprintf(str, "T%08lx%d\r", f->CanId, f->DLC);
 				break;
 				case 1:
-				sprintf(str, "T%08x%d%02x\r", f->CanId, f->DLC, f->Data[0]);
+				sprintf(str, "T%08lx%d%02x\r", f->CanId, f->DLC, f->Data[0]);
 				break;
 				case 2:
-				sprintf(str, "T%08x%d%02x%02x\r", f->CanId, f->DLC,
+				sprintf(str, "T%08lx%d%02x%02x\r", f->CanId, f->DLC,
 					f->Data[0], f->Data[1]);
 				break;
 				case 3:
-				sprintf(str, "T%08x%d%02x%02x%02x\r", f->CanId, f->DLC,
+				sprintf(str, "T%08lx%d%02x%02x%02x\r", f->CanId, f->DLC,
 					f->Data[0], f->Data[1], f->Data[2]);
 				break;
 				case 4:
-				sprintf(str, "T%08x%d%02x%02x%02x%02x\r", f->CanId,
+				sprintf(str, "T%08lx%d%02x%02x%02x%02x\r", f->CanId,
 					f->DLC, f->Data[0], f->Data[1], f->Data[2], f->Data[3]);
 				break;
 				case 5:
-				sprintf(str, "T%08x%d%02x%02x%02x%02x%02x\r" , f->CanId,
+				sprintf(str, "T%08lx%d%02x%02x%02x%02x%02x\r" , f->CanId,
 					f->DLC, f->Data[0], f->Data[1], f->Data[2], f->Data[3],
 					f->Data[4]);
 				break;
 				case 6:
-				sprintf(str, "T%08x%d%02x%02x%02x%02x%02x%02x\r", f->CanId,
+				sprintf(str, "T%08lx%d%02x%02x%02x%02x%02x%02x\r", f->CanId,
 					f->DLC, f->Data[0], f->Data[1], f->Data[2], f->Data[3],
 					f->Data[4], f->Data[5]);
 				break;
 				case 7:
-				sprintf(str, "T%08x%d%02x%02x%02x%02x%02x%02x%02x\r", f->CanId,
+				sprintf(str, "T%08lx%d%02x%02x%02x%02x%02x%02x%02x\r", f->CanId,
 					f->DLC, f->Data[0], f->Data[1], f->Data[2], f->Data[3],
 					f->Data[4], f->Data[5], f->Data[6]);
 				break;
 				case 8:
-				sprintf(str, "T%08x%d%02x%02x%02x%02x%02x%02x%02x%02x\r", f->CanId,
+				sprintf(str, "T%08lx%d%02x%02x%02x%02x%02x%02x%02x%02x\r", f->CanId,
 					f->DLC, f->Data[0], f->Data[1], f->Data[2], f->Data[3],
 					f->Data[4], f->Data[5], f->Data[6], f->Data[7]);
 				break;

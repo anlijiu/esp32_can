@@ -79,8 +79,8 @@
 #define TX_LED    19
 
 
-extern xQueueHandle can_frame_queue;
-extern xQueueHandle can_irq_quee;
+extern QueueHandle_t can_frame_queue;
+extern QueueHandle_t can_irq_quee;
 
 #define MCP "MCP"
 

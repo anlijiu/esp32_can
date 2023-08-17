@@ -81,10 +81,10 @@ static uint16_t spp_conn_id = 0xffff;
 static esp_gatt_if_t spp_gatts_if = 0xff;
 QueueHandle_t spp_notify_queue = NULL;
 uint8_t  notify_data[10] = {0};
-static xQueueHandle cmd_cmd_queue = NULL;
+static QueueHandle_t cmd_cmd_queue = NULL;
 
 #ifdef SUPPORT_HEARTBEAT
-static xQueueHandle cmd_heartbeat_queue = NULL;
+static QueueHandle_t cmd_heartbeat_queue = NULL;
 static uint8_t  heartbeat_s[9] = {'E','s','p','r','e','s','s','i','f'};
 static bool enable_heart_ntf = false;
 static uint8_t heartbeat_count_num = 0;
@@ -377,7 +377,8 @@ void notify_task(void *pvParameters)
 {
     uint16_t cmd = 0;
     for (;;) {
-        if (xQueueReceive(spp_notify_queue, (void * )&cmd, (portTickType)portMAX_DELAY)) {
+        //(portTickType)portMAX_DELAY
+        if (xQueueReceive(spp_notify_queue, (void * )&cmd, ( TickType_t ) portMAX_DELAY )) {
             if(is_connected) {
                 ESP_LOGI(GATTS_TABLE_TAG, " notify_task");
                 esp_ble_gatts_send_indicate(spp_gatts_if, spp_conn_id, spp_handle_table[SPP_IDX_SPP_STATUS_VAL], sizeof(notify_data), notify_data, false);

@@ -1,0 +1,14 @@
+{
+    "idf.adapterTargetName": "esp32",
+    "files.associations": {
+        "mcp2515.h": "c",
+        "can.h": "c",
+        "stdbool.h": "c",
+        "semphr.h": "c",
+        "event_groups.h": "c",
+        "freertos.h": "c",
+        "esp_log.h": "c",
+        "stdarg.h": "c",
+        "freertosconfig.h": "c"
+    }
+}
